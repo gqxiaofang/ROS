@@ -1,0 +1,678 @@
+<!DOCTYPE html><html><head>
+      <title>embedded_use</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:////home/panb/.vscode/extensions/shd101wyy.markdown-preview-enhanced-0.5.13/node_modules/@shd101wyy/mume/dependencies/katex/katex.min.css">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <style>
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <h1 class="mume-header" id="%E9%A1%B6%E5%8D%87%E8%BD%A6%E5%9E%8B%E8%BD%A6%E4%BD%93%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3">&#x9876;&#x5347;&#x8F66;&#x578B;&#x8F66;&#x4F53;&#x4F7F;&#x7528;&#x8BF4;&#x660E;&#x6587;&#x6863;</h1>
+
+<h2 class="mume-header" id="1-%E8%BD%AF%E4%BD%93%E7%8E%AF%E5%A2%83">1&#x3001;&#x8F6F;&#x4F53;&#x73AF;&#x5883;</h2>
+
+<p>&#x4F7F;&#x7528;ubuntu 16 + ROS kinetic&#x73AF;&#x5883;</p>
+<h3 class="mume-header" id="%E7%8E%AF%E5%A2%83%E4%BE%9D%E8%B5%96">&#x73AF;&#x5883;&#x4F9D;&#x8D56;</h3>
+
+<p>&#x9879;&#x76EE;&#x7F16;&#x8BD1;&#x524D;&#x9700;&#x8981;&#x5148;&#x89E3;&#x51B3;&#x4F9D;&#x8D56;&#x95EE;&#x9898;&#x3002;</p>
+<ol>
+<li>ROS&#x73AF;&#x5883;&#x5B89;&#x88C5;</li>
+<li>can &#x9A71;&#x52A8;</li>
+</ol>
+<pre data-role="codeBlock" data-info="bash" class="language-bash"><span class="token comment"># &#x5C06;&#x4EE3;&#x7801;can_driver/hardware_driver/libusbcan.so &#x79FB;&#x52A8;&#x5230; /lib &#x4E0B;</span>
+$ <span class="token function">sudo</span> <span class="token function">cp</span> can_driver/hardware_driver/libusbcan.so /lib
+$ <span class="token function">sudo</span> <span class="token function">cp</span> can_driver/hardware_driver/libcontrolcan.so /lib
+$ <span class="token function">sudo</span> <span class="token function">cp</span> can_driver/hardware_driver/99-myusb.rules /etc/udev/rules.d/
+$ <span class="token function">sudo</span> <span class="token function">cp</span> can_driver/hardware_driver/usbcan.rules /etc/udev/rules.d/
+$ <span class="token function">sudo</span> udevadm control --reload
+</pre><h2 class="mume-header" id="2-%E5%8A%9F%E8%83%BD%E4%BD%BF%E7%94%A8">2&#x3001;&#x529F;&#x80FD;&#x4F7F;&#x7528;</h2>
+
+<h3 class="mume-header" id="%E6%9C%BA%E4%BD%93%E8%8A%82%E7%82%B9%E7%9A%84%E4%BD%BF%E7%94%A8">&#x673A;&#x4F53;&#x8282;&#x70B9;&#x7684;&#x4F7F;&#x7528;</h3>
+
+<p>&#x5B89;&#x88C5;&#x5982;&#x4E0B;ros package&#xFF1A;</p>
+<pre data-role="codeBlock" data-info class="language-"><code>sudo dpkg -i  ros-kinetic-cotek-cmake_3.2.0-0xenial_amd64.deb
+sudo dpkg -i  ros-kinetic-cotek-common_0.0.0-0xenial_amd64.deb
+sudo dpkg -i  ros-kinetic-cotek-embedded_0.0.0-0xenial_amd64.deb
+sudo dpkg -i  ros-kinetic-cotek-msgs_0.0.0-0xenial_amd64.deb
+</code></pre><p>&#x542F;&#x52A8;&#x8F66;&#x4F53;&#x8282;&#x70B9;&#xFF1A;</p>
+<pre data-role="codeBlock" data-info class="language-"><code>roslaunch cotek_embedded cotek_embedded.launch
+</code></pre><h3 class="mume-header" id="%E5%AF%BC%E8%88%AA%E6%BF%80%E5%85%89%E7%9A%84%E4%BD%BF%E7%94%A8">&#x5BFC;&#x822A;&#x6FC0;&#x5149;&#x7684;&#x4F7F;&#x7528;</h3>
+
+<p>&#x9996;&#x5148;&#x9700;&#x8981;&#x5B89;&#x88C5;&#x5BFC;&#x822A;&#x6FC0;&#x5149;&#x9A71;&#x52A8;&#xFF1A;</p>
+<pre data-role="codeBlock" data-info class="language-"><code>mkdir -p sensor_ws/src
+cp -r lidar_driver/pepperl_fuchs_r2000/* sensor/src/
+cd sensor_ws
+catkin_make install
+</code></pre><p>&#x6839;&#x636E;&#x9700;&#x8981;&#x4FEE;&#x6539;&#x5BFC;&#x822A;&#x6FC0;&#x5149;launch&#xFF1A;</p>
+<pre data-role="codeBlock" data-info class="language-"><code>rosed cotek_common dppf.launch 
+</code></pre><p>&#x5176;&#x5185;&#x5BB9;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre data-role="codeBlock" data-info class="language-"><code> &lt;launch&gt;
+  &lt;node pkg=&quot;pepperl_fuchs_r2000&quot; type=&quot;r2000_node&quot; name=&quot;r2000_node_1&quot; respawn=&quot;true&quot;&gt;
+    &lt;param name=&quot;scanner_ip&quot; value=&quot;192.168.0.20&quot;/&gt;
+    &lt;param name=&quot;frame_id&quot; value=&quot;laser1&quot;/&gt;
+    &lt;param name=&quot;scan_frequency&quot; value=&quot;20&quot;/&gt;
+    &lt;param name=&quot;samples_per_scan&quot; value=&quot;4200&quot;/&gt;
+    &lt;param name=&quot;angle_min&quot; value=&quot;-2.3562&quot;/&gt;
+    &lt;param name=&quot;angle_max&quot; value=&quot;2.3562&quot;/&gt;
+    &lt;remap from=&quot;scan&quot; to=&quot;scan_1&quot; /&gt;
+  &lt;/node&gt;
+
+  &lt;node pkg=&quot;pepperl_fuchs_r2000&quot; type=&quot;r2000_node&quot; name=&quot;r2000_node_2&quot; respawn=&quot;true&quot;&gt;
+    &lt;param name=&quot;scanner_ip&quot; value=&quot;192.168.0.21&quot;/&gt;
+    &lt;param name=&quot;frame_id&quot; value=&quot;laser2&quot;/&gt;
+    &lt;param name=&quot;scan_frequency&quot; value=&quot;20&quot;/&gt;
+    &lt;param name=&quot;samples_per_scan&quot; value=&quot;4200&quot;/&gt;
+    &lt;param name=&quot;angle_min&quot; value=&quot;-2.3562&quot;/&gt;
+    &lt;param name=&quot;angle_max&quot; value=&quot;2.3562&quot;/&gt;
+    &lt;remap from=&quot;scan&quot; to=&quot;scan_2&quot; /&gt;
+  &lt;/node&gt;
+
+&lt;/launch&gt;
+</code></pre><p>&#x8FD0;&#x884C;&#x5BFC;&#x822A;&#x6FC0;&#x5149;&#x8282;&#x70B9;&#xFF1A;</p>
+<pre data-role="codeBlock" data-info class="language-"><code>roslaunch cotek_common dppf.launch 
+</code></pre><h2 class="mume-header" id="3-%E9%80%9A%E8%AE%AF%E6%8E%A5%E5%8F%A3">3&#x3001;&#x901A;&#x8BAF;&#x63A5;&#x53E3;</h2>
+
+<h3 class="mume-header" id="%E6%BF%80%E5%85%89%E4%BF%A1%E6%81%AF%E8%8E%B7%E5%8F%96">&#x6FC0;&#x5149;&#x4FE1;&#x606F;&#x83B7;&#x53D6;</h3>
+
+<p>&#x53D1;&#x5E03;&#x8282;&#x70B9;&#xFF1A;</p>
+<pre data-role="codeBlock" data-info class="language-"><code> /scan_1
+ /scan_2
+</code></pre><p>&#x6D88;&#x606F;&#x5185;&#x5BB9;&#xFF1A;<br>
+&#x6B64;&#x5904;&#x83B7;&#x53D6;&#x7684;&#x4E3A;&#x6807;&#x51C6;&#x6FC0;&#x5149;&#x6570;&#x636E;&#xFF0C;&#x6D88;&#x606F;&#x7C7B;&#x578B;&#x4E3A;sensor_msgs/LaserScan</p>
+<pre data-role="codeBlock" data-info class="language-"><code>std_msgs/Header header
+  uint32 seq
+  time stamp
+  string frame_id
+float32 angle_min
+float32 angle_max
+float32 angle_increment
+float32 time_increment
+float32 scan_time
+float32 range_min
+float32 range_max
+float32[] ranges
+float32[] intensities
+</code></pre><h3 class="mume-header" id="%E8%BD%A6%E4%BD%93%E4%BF%A1%E6%81%AF%E8%8E%B7%E5%8F%96">&#x8F66;&#x4F53;&#x4FE1;&#x606F;&#x83B7;&#x53D6;</h3>
+
+<p>&#x4EE5;&#x4E0B;&#x4E3A;&#x8F66;&#x4F53;&#x53D1;&#x5E03;&#x7684;&#x76F8;&#x5173;topic&#x548C;&#x6D88;&#x606F;&#x5185;&#x5BB9;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">&#x53D1;&#x5E03;topic</th>
+<th style="text-align:center">&#x6D88;&#x606F;&#x7C7B;&#x578B;</th>
+<th style="text-align:center">&#x6D88;&#x606F;&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">/safety_io_state</td>
+<td style="text-align:center">cotek_msgs::safety_io_state</td>
+<td style="text-align:center">&#x907F;&#x969C;&#x72B6;&#x6001;</td>
+</tr>
+<tr>
+<td style="text-align:center">/jack_up_io_state</td>
+<td style="text-align:center">cotek_msgs::jack_up_io_state</td>
+<td style="text-align:center">&#x9876;&#x5347;&#x5230;&#x4F4D;&#x4FE1;&#x606F;</td>
+</tr>
+<tr>
+<td style="text-align:center">/battery</td>
+<td style="text-align:center">cotek_msgs::battery</td>
+<td style="text-align:center">&#x7535;&#x6C60;&#x4FE1;&#x606F;</td>
+</tr>
+<tr>
+<td style="text-align:center">/manual</td>
+<td style="text-align:center">cotek_msgs::manual</td>
+<td style="text-align:center">&#x624B;&#x81EA;&#x52A8;&#x72B6;&#x6001;</td>
+</tr>
+<tr>
+<td style="text-align:center">/charge_do_state</td>
+<td style="text-align:center">cotek_msgs::charge_do_state</td>
+<td style="text-align:center">&#x5145;&#x7535;&#x7EE7;&#x7535;&#x5668;&#x662F;&#x5426;&#x95ED;&#x5408;</td>
+</tr>
+<tr>
+<td style="text-align:center">/load_state</td>
+<td style="text-align:center">cotek_msgs::load_state</td>
+<td style="text-align:center">&#x8F7D;&#x8D27;&#x72B6;&#x6001;</td>
+</tr>
+<tr>
+<td style="text-align:center">/odom</td>
+<td style="text-align:center">nav_msgs::Odometry</td>
+<td style="text-align:center">&#x91CC;&#x7A0B;&#x4FE1;&#x606F;</td>
+</tr>
+<tr>
+<td style="text-align:center">/imu</td>
+<td style="text-align:center">sensor_msgs::Imu</td>
+<td style="text-align:center">IMU&#x4FE1;&#x606F;</td>
+</tr>
+<tr>
+<td style="text-align:center">/pallet_act_info</td>
+<td style="text-align:center">cotek_msgs::pallet_act_info</td>
+<td style="text-align:center">&#x6258;&#x76D8;&#x4FE1;&#x606F;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x6D88;&#x606F;&#x5185;&#x5BB9;&#xFF1A;<br>
+cotek_msgs::safety_io_state:</p>
+<pre data-role="codeBlock" data-info class="language-"><code>uint8 avoid_io_state
+
+# &#x4E0A;&#x62A5;&#x4F18;&#x5148;&#x7EA7; &#x4E0D;&#x53EF;&#x6062;&#x590D;(&#x9632;&#x649E;&#x6761;) &gt; &#x53EF;&#x6062;&#x590D;&#x5149;&#x7535;(&#x9632;&#x649E;&#x68C0;&#x6D4B;&#x5F00;&#x5173;) &gt; &#x53EF;&#x6062;&#x590D;&#x907F;&#x969C;&#x533A;&#x57DF;(&#x5317;&#x6D0B;&#x907F;&#x969C;&#x533A;&#x57DF;)
+# enum class Avoid_io_state : uint8_t {
+#   NONE = 0,            // &#x65E0;&#x907F;&#x969C; 
+#   LEVEL_I = 1,         // &#x907F;&#x969C;&#x533A;&#x57DF; &#x907F;&#x969C;&#x7B49;&#x7EA7;1 - slowlevel1 
+#   LEVEL_II = 2,        // &#x907F;&#x969C;&#x533A;&#x57DF; &#x907F;&#x969C;&#x7B49;&#x7EA7;2 - slowlevel2 
+#   LEVEL_III = 3,       // &#x907F;&#x969C;&#x533A;&#x57DF; &#x907F;&#x969C;&#x7B49;&#x7EA7;3 - stop 
+#   BUMP = 4,            // &#x9632;&#x649E;&#x6761; 
+#   FORK_LEFT_LEG = 5,   // &#x53C9;&#x8F66;&#x5DE6;&#x53C9;&#x817F;&#x9632;&#x649E; 
+#   FORK_RIGHT_LEG = 6,  // &#x53C9;&#x8F66;&#x53F3;&#x53C9;&#x817F;&#x9632;&#x649E; 
+#   FORK_LEG_BOTH = 7    // &#x53C9;&#x8F66;&#x5DE6;&#x53F3;&#x53C9;&#x817F;&#x90FD;&#x68C0;&#x6D4B;&#x5230; 
+#   }
+
+</code></pre><p>cotek_msgs::jack_up_io_state:</p>
+<pre data-role="codeBlock" data-info class="language-"><code>uint8 up_down_state
+uint8 roate_state
+
+# enum class UpDownState : uint8_t {
+#   UP_NONE = 0,
+#   UP_1 = 1,
+#   UP_2 = 2,
+#   UP_BOTH = 3,
+#   DOWN_NONE = 4,
+#   DOWN_1 = 5,
+#   DOWN_2 = 6,
+#   DOWN_BOTH = 7,
+# }
+
+# enum class RoateType : uint8_t {
+#   Roate_NONE = 0,
+#   Roate_1 = 1,
+#   Roate_2 = 2,
+#   Roate_BOTH = 3,
+# }            
+</code></pre><p>cotek_msgs::battery :</p>
+<pre data-role="codeBlock" data-info class="language-"><code>std_msgs/Header header
+uint8 battery_type
+uint8 capacity
+int16 current
+uint16 voltage
+
+# enum class BatteryType : uint32_t {
+#   NONE = 0,  // &#x4E0D;&#x5B58;&#x5728;
+#   CURTIS = 1,
+#   TODO(add)
+# }      
+</code></pre><p>cotek_msgs::manual:</p>
+<pre data-role="codeBlock" data-info class="language-"><code>bool mode
+# true: &#x624B;&#x52A8;&#x6A21;&#x5F0F;  false&#xFF1A;&#x81EA;&#x52A8;&#x6A21;&#x5F0F;&#x3000;
+</code></pre><p>cotek_msgs::charge_do_state:</p>
+<pre data-role="codeBlock" data-info class="language-"><code>bool charge_do_state
+# true: &#x5145;&#x7535;&#x7EE7;&#x7535;&#x5668;&#x6253;&#x5F00;  false&#xFF1A;&#x5145;&#x7535;&#x7EE7;&#x7535;&#x5668;&#x5173;&#x95ED;&#x3000;
+</code></pre><p>cotek_msgs::load_state:</p>
+<pre data-role="codeBlock" data-info class="language-"><code>uint32 load_state
+# 0: &#x672A;&#x77E5;, 1: &#x8F7D;&#x8D27;&#x72B6;&#x6001;,  2: &#x6CA1;&#x6709;&#x8F7D;&#x8D27; &#x3000;
+</code></pre><p>nav_msgs::Odometry: &#x91CC;&#x7A0B;&#x8BA1;&#x4FE1;&#x606F;&#x91C7;&#x7528;&#x6807;&#x51C6;&#x91CC;&#x7A0B;&#x4FE1;&#x606F;</p>
+<pre data-role="codeBlock" data-info class="language-"><code>std_msgs/Header header
+  uint32 seq
+  time stamp
+  string frame_id
+string child_frame_id
+geometry_msgs/PoseWithCovariance pose
+  geometry_msgs/Pose pose
+    geometry_msgs/Point position
+      float64 x
+      float64 y
+      float64 z
+    geometry_msgs/Quaternion orientation
+      float64 x
+      float64 y
+      float64 z
+      float64 w
+  float64[36] covariance
+geometry_msgs/TwistWithCovariance twist
+  geometry_msgs/Twist twist
+    geometry_msgs/Vector3 linear
+      float64 x
+      float64 y
+      float64 z
+    geometry_msgs/Vector3 angular
+      float64 x
+      float64 y
+      float64 z
+  float64[36] covariance
+</code></pre><p>sensor_msgs::Imu: &#x91C7;&#x7528;&#x6807;&#x51C6;IMU&#x4FE1;&#x606F;</p>
+<pre data-role="codeBlock" data-info class="language-"><code>std_msgs/Header header
+  uint32 seq
+  time stamp
+  string frame_id
+geometry_msgs/Quaternion orientation
+  float64 x
+  float64 y
+  float64 z
+  float64 w
+float64[9] orientation_covariance
+geometry_msgs/Vector3 angular_velocity
+  float64 x
+  float64 y
+  float64 z
+float64[9] angular_velocity_covariance
+geometry_msgs/Vector3 linear_acceleration
+  float64 x
+  float64 y
+  float64 z
+float64[9] linear_acceleration_covariance
+</code></pre><p>cotek_msgs::pallet_act_info:</p>
+<pre data-role="codeBlock" data-info class="language-"><code>float64 lift_velocity #&#x6258;&#x76D8;&#x5347;&#x964D;&#x7EBF;&#x901F;&#x5EA6;
+float64 lift_height   #&#x6258;&#x76D8;&#x9AD8;&#x5EA6;
+int32   lift_rpm      #&#x9876;&#x5347;&#x7535;&#x673A;&#x8F6C;&#x901F;
+bool height_init      #&#x9AD8;&#x5EA6;&#x521D;&#x59CB;&#x5316;&#x6807;&#x5FD7;
+
+float64 rotate_omega  #&#x6258;&#x76D8;&#x65CB;&#x8F6C;&#x89D2;&#x901F;&#x5EA6;
+float64 rotate_degree #&#x6258;&#x76D8;&#x89D2;&#x5EA6;
+int32   rotate_rpm    #&#x65CB;&#x8F6C;&#x7535;&#x673A;&#x8F6C;&#x901F;
+bool degree_init      #&#x89D2;&#x5EA6;&#x521D;&#x59CB;&#x5316;&#x6807;&#x5FD7;                                        
+</code></pre><h3 class="mume-header" id="%E4%BC%A0%E6%84%9F%E5%99%A8%E4%BF%A1%E6%81%AF%E8%8E%B7%E5%8F%96">&#x4F20;&#x611F;&#x5668;&#x4FE1;&#x606F;&#x83B7;&#x53D6;</h3>
+
+<p>&#x8FD9;&#x90E8;&#x5206;&#x4E3B;&#x8981;&#x76F4;&#x63A5;&#x5C06;&#x5404;&#x4E2A;&#x4F20;&#x611F;&#x5668;&#x7684;&#x6570;&#x636E;&#x53D1;&#x5E03;&#x3002;<br>
+&#x53D1;&#x5E03;topic&#x4E3A;device_table&#x4E2D;&#x5B9A;&#x4E49;&#x7684;&#x5404;&#x4E2A;child_name,&#x6240;&#x4EE5;&#x53EF;&#x4EE5;&#x6839;&#x636E;device_table&#x4E2D;&#x7684;&#x5404;&#x4E2A;child_name&#x67E5;&#x770B;&#x5404;&#x4F20;&#x611F;&#x5668;&#x6570;&#x636E;&#x4FE1;&#x606F;&#x3002;<br>
+&#x6BD4;&#x5982;device_table&#x4E2D;&#x5B9A;&#x4E49;&#x4E86;&#x5982;&#x4E0B;&#x56DB;&#x4E2A;&#x7535;&#x673A;&#xFF0C;</p>
+<pre data-role="codeBlock" data-info class="language-"><code>        {
+            &quot;name&quot;: &quot;syntron_motor&quot;,
+            &quot;install_device&quot;: [
+                {
+                    &quot;child_name&quot;: &quot;syntron_left_move_motor&quot;,
+                    &quot;device_param&quot;: {
+                        &quot;node_id&quot;: 13,
+                        &quot;channel&quot;: 1
+                    }
+                },
+                {
+                    &quot;child_name&quot;: &quot;syntron_right_move_motor&quot;,
+                    &quot;device_param&quot;: {
+                        &quot;node_id&quot;: 14,
+                        &quot;channel&quot;: 1
+                    }
+                },
+                {
+                    &quot;child_name&quot;: &quot;syntron_lift_motor&quot;,
+                    &quot;device_param&quot;: {
+                        &quot;node_id&quot;: 15,
+                        &quot;channel&quot;: 1
+                    }
+                },
+                {
+                    &quot;child_name&quot;: &quot;syntron_rotate_motor&quot;,
+                    &quot;device_param&quot;: {
+                        &quot;node_id&quot;: 17,
+                        &quot;channel&quot;: 1
+                    }
+                }
+            ]
+        }
+
+</code></pre><p>&#x90A3;&#x4E48;&#x5C31;&#x53EF;&#x4EE5;&#x6839;&#x636E;child_name:syntron_left_move_motor&#x3001;syntron_right_move_motor&#x3001;syntr&#x3001;on_lift_motor&#x3001;syntron_rotate_motor&#x83B7;&#x53D6;&#x8FD9;&#x56DB;&#x4E2A;&#x7535;&#x673A;&#x7684;&#x6570;&#x636E;&#x4FE1;&#x606F;&#x3002;&#x6BD4;&#x5982;&#x53EF;&#x4EE5;&#x8FD0;&#x884C;&#x4E0B;&#x9762;&#x547D;&#x4EE4;&#x67E5;&#x770B;&#x5DE6;&#x8F6E;&#x7535;&#x673A;&#x6570;&#x636E;&#xFF1A;</p>
+<pre data-role="codeBlock" data-info class="language-"><code>rostopic echo /syntron_left_move_motor
+</code></pre><p>&#x53C8;&#x6BD4;&#x5982;device_table&#x4E2D;&#x5B9A;&#x4E49;&#x4E86;&#x5982;&#x4E0B;IO&#xFF1A;</p>
+<pre data-role="codeBlock" data-info class="language-"><code>        {
+            &quot;name&quot;: &quot;io&quot;,
+            &quot;install_device&quot;: [
+                {
+                    &quot;child_name&quot;: &quot;io&quot;,
+                    &quot;device_param&quot;: {
+                        &quot;node_id&quot;: 1,
+                        &quot;channel&quot;: 1
+                    }
+                },
+                {
+                    &quot;child_name&quot;: &quot;io2&quot;,
+                    &quot;device_param&quot;: {
+                        &quot;node_id&quot;: 2,
+                        &quot;channel&quot;: 1
+                    }
+                }
+            ]
+        }
+</code></pre><p>&#x90A3;&#x4E48;&#x5C31;&#x53EF;&#x4EE5;&#x7528;&#x4E0B;&#x9762;&#x547D;&#x4EE4;&#x5206;&#x522B;&#x67E5;&#x770B;&#x4E24;&#x4E2A;IO&#x7684;&#x72B6;&#x6001;&#xFF1A;</p>
+<pre data-role="codeBlock" data-info class="language-"><code>rostopic echo /io
+rostopic echo /io2
+</code></pre><h3 class="mume-header" id="%E6%9C%BA%E4%BD%93%E7%A7%BB%E5%8A%A8">&#x673A;&#x4F53;&#x79FB;&#x52A8;</h3>
+
+<p>&#x8BA2;&#x9605;topic&#xFF1A;</p>
+<pre data-role="codeBlock" data-info class="language-"><code> /move_cmd
+</code></pre><p>&#x6D88;&#x606F;&#x5185;&#x5BB9;&#xFF1A;<br>
+&#x6D88;&#x606F;&#x7C7B;&#x578B;&#x4E3A;cotek_msgs/move_cmd</p>
+<pre data-role="codeBlock" data-info class="language-"><code># &#x53D1;&#x9001; (v, w) &#x7ED9;&#x5404;&#x6A21;&#x578B;
+float32 cmd_velocity
+float32 cmd_omega
+</code></pre><p>&#x53D1;&#x5E03;topic&#xFF1A;</p>
+<pre data-role="codeBlock" data-info class="language-"><code> /move_feedback
+</code></pre><p>&#x6D88;&#x606F;&#x5185;&#x5BB9;&#xFF1A;<br>
+&#x6D88;&#x606F;&#x7C7B;&#x578B;&#x4E3A;cotek_msgs/move_feedback</p>
+<pre data-role="codeBlock" data-info class="language-"><code># &#x901A;&#x8FC7;&#x5404;&#x6A21;&#x578B;&#x8F6C;&#x5316;&#x540E;&#x7684; (v, w)
+float32 actual_velocity
+float32 actual_omega
+</code></pre><h3 class="mume-header" id="%E6%9C%BA%E4%BD%93%E5%8A%A8%E4%BD%9C">&#x673A;&#x4F53;&#x52A8;&#x4F5C;</h3>
+
+<p>&#x8F66;&#x4F53;&#x4E3B;&#x8981;&#x63D0;&#x4F9B;&#x4EE5;&#x4E0B;&#x539F;&#x5B50;&#x64CD;&#x4F5C;&#xFF1A;&#x6258;&#x76D8;&#x62AC;&#x5347;&#x3001;&#x6258;&#x76D8;&#x4E0B;&#x964D;&#x3001;&#x6258;&#x76D8;&#x65CB;&#x8F6C;&#x3001;&#x6258;&#x76D8;&#x5F52;&#x96F6;&#x3001;&#x5145;&#x7535;&#x3001;&#x4F4E;&#x529F;&#x8017;&#x6A21;&#x5F0F;&#x3001;enable&#x7535;&#x673A;&#x3001;disable&#x7535;&#x673A;<br>
+audio&#x90E8;&#x5206;&#x4E3B;&#x8981;&#x63D0;&#x4F9B;&#x9047;&#x5230;&#x7279;&#x6B8A;&#x60C5;&#x51B5;&#x4E0B;&#x7684;&#x58F0;&#x97F3;&#x62A5;&#x8B66;&#xFF0C;&#x53EF;&#x6839;&#x636E;&#x9700;&#x8981;&#x81EA;&#x884C;&#x8BBE;&#x7F6E;<br>
+&#x4E09;&#x8272;&#x706F;&#x4E3B;&#x8981;&#x63D0;&#x4F9B;&#x8FD0;&#x884C;&#x4E2D;&#x72B6;&#x6001;&#x7684;&#x5C55;&#x793A;&#xFF0C;&#x53EF;&#x6839;&#x636E;&#x9700;&#x8981;&#x81EA;&#x884C;&#x8BBE;&#x7F6E;<br>
+&#x8BA2;&#x9605;topic&#xFF1A;</p>
+<pre data-role="codeBlock" data-info class="language-"><code>/jack_up_action
+</code></pre><p>&#x6D88;&#x606F;&#x5185;&#x5BB9;&#xFF1A;<br>
+&#x6D88;&#x606F;&#x7C7B;&#x578B;&#x4E3A;cotek_msgs/jack_up_action</p>
+<pre data-role="codeBlock" data-info class="language-"><code>bool left_motor_enable  #&#x4E0D;&#x4F7F;&#x7528;
+bool right_motor_enable  #&#x4E0D;&#x4F7F;&#x7528;
+bool lift_motor_enable  #&#x4E0D;&#x4F7F;&#x7528;
+bool rotate_motor_enable  #&#x4E0D;&#x4F7F;&#x7528;
+float64 lift_v  #&#x4E0D;&#x4F7F;&#x7528;
+float64 rotate_w  #&#x4E0D;&#x4F7F;&#x7528;
+uint8 corning_led_type  #&#x4E0D;&#x4F7F;&#x7528;
+uint8 three_color_led_type
+int32 audio_control_type
+int32 audio_control_level
+int32 atomic_action_type
+float64 atomic_action_value
+
+# &#x4E09;&#x8272;&#x706F;&#x63A7;&#x5236;&#x7C7B;&#x578B;
+# enum class ThreeColorLedType : uint8_t {
+#   RED_ON = 1,     // 00000001
+#   YELLOW_ON = 2,  // 00000010
+#   GREEN_ON = 4,   // 00000100
+
+#   YELLOW_GREEN_ON = 6,  // 00000110
+#   RED_YELLOW_ON = 3,    // 00000011
+#   RED_GREEN_ON = 5,     // 00000101
+
+#   LIGHT_ALL_ON = 7,  // 00000111
+#   LIGHT_OFF = 0      // 00000000
+# }
+
+# enum class AudioControlType : uint32_t {
+#   STOP = 0,
+#   BUMP_FAULT = 1,
+#   FORWARD = 2,
+#   BACKWARD = 3,
+#   OBSTACLE_WARN = 4,
+#   OBSTACLE_STOP = 5,
+#   LOW_BATTERY = 6
+# }
+
+# enum class AtomicActionType : uint32_t {
+    REST = 0,
+#   UP = 2,      // &#x62AC;&#x5347;(&#x9AD8;&#x5EA6;)  (operation_value &#x586B; &#x901F;&#x5EA6;&#x503C;)
+#   DOWN = 3,    // &#x4E0B;&#x964D;(&#x9AD8;&#x5EA6;)  (operation_value &#x586B; &#x901F;&#x5EA6;&#x503C;)
+#   CHARGE = 4,  // &#x5145;&#x7535; (operation_value &#x586B;0(&#x5173;), 1(&#x5F00;))
+
+#   LOW_POWER_MODE = 99,  // &#x4F4E;&#x529F;&#x8017; (operation_value &#x586B;0(&#x5173;), 1(&#x5F00;))
+#   PALLET_ROTATION = 201,  // &#x6258;&#x76D8;&#x65CB;&#x8F6C;&#xFF08;operation_value &#x586B; &#x89D2;&#x901F;&#x5EA6;&#x503C;&#xFF09;
+#   PALLET_ZERO = 202,  // &#x6258;&#x76D8;&#x5F52;&#x96F6;
+#   MOTOR_DISABLE = 203,  // bit&#x5360;&#x4F4D; value= 1/2/4/8&#xFF1A;left/right/lift/rotate &#x7535;&#x673A;&#xFF0C;&#x591A;&#x4E2A;&#x7535;&#x673A;&#x65F6;&#x53E0;&#x52A0;
+#   MOTOR_ENABLE = 204,  // bit&#x5360;&#x4F4D; value= 1/2/4/8&#xFF1A;left/right/lift/rotate &#x7535;&#x673A;&#xFF0C;&#x591A;&#x4E2A;&#x7535;&#x673A;&#x65F6;&#x53E0;&#x52A0;
+# };
+
+</code></pre>
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
