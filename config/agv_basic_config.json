@@ -1,0 +1,50 @@
+{
+  "文件说明": "该文件由车载本地读取,用来初始化相应配置, 标准单位 米 秒 安 伏",
+  "agv类型": "暂时不做修改 1:中力托盘叉车 2:二维码顶升 4:堆高车 5:林德托盘车 6:诺力托盘车 7:中力牵引车 8:尤恩前移车 9:磁条顶升,",
+  "agv_type": 12,
+  "服务器Ip": "填ip",
+  "server_ip": "192.168.2.21",
+  "服务器端口配置": "填8899, 咨询调度",
+  "server_port": 8888,
+  "local_port": 6666,
+  "landmark_map": {
+    "http_get_landmark_map_url": "/landmark/get",
+    "http_update_landmark_map_url": "/landmark/update",
+    "http_landmark_map_port": 8080,
+    "当前反光板地图编号": "填编号",
+    "current_reflector_map_id": 1,
+    "当前反光板分区编号": "填编号",
+    "current_reflector_section_id": 1,
+    "当前二维码地图编号": "填编号",
+    "current_qr_map_id": 991007135,
+    "当前二维码分区编号": "填编号",
+    "current_qr_section_id": 991007136,
+    "当前rfid地图编号": "填编号",
+    "current_rfid_map_id": 392768326,
+    "当前rfid分区编号": "填编号",
+    "current_rfid_section_id": 392779256
+  },
+  "mechanical_param": {
+    "model_type": 2,
+    "bicycle_model": {
+      "wheel_base": 1.595,
+      "max_wheel_base": 1.595,
+      "min_wheel_base": 1.512
+    },
+    "unicycle_model": {
+      "wheel_track": 0.770,
+      "wheel_diameter": 0.18,
+      "move_motor_reduce_ratio": 20,
+      "rotate_motor_reduce_ratio": 150,
+      "lift_motor_reduce_ratio": 64,
+      "lift_max_height": 0.05
+    },
+    "sensor_install": {
+      "laser_sensor_install": {
+        "laser_offset_x": 1.407,
+        "laser_offset_y": 0.0,
+        "laser_offset_theta": 0.00
+      }
+    }
+  }
+}

@@ -1,0 +1,174 @@
+{
+    "channel_baudrate": {
+        "can0": 125,
+        "can1": 1000
+    },
+    "device_list": [
+        {
+            "name": "io",
+            "install_device": [
+                {
+                    "child_name": "io",
+                    "device_param": {
+                        "node_id": 1,
+                        "channel": 1
+                    }
+                },
+                {
+                    "child_name": "io2",
+                    "device_param": {
+                        "node_id": 2,
+                        "channel": 1
+                    }
+                },
+                {
+                    "child_name": "io_single_out",
+                    "device_param": {
+                        "node_id": 3,
+                        "channel": 1
+                    }
+                }
+            ]
+        },
+        {
+            "name": "audio",
+            "install_device": [
+                {
+                    "child_name": "audio",
+                    "device_param": {
+                        "node_id": 12,
+                        "channel": 1
+                    }
+                }
+            ]
+        },
+        {
+            "name": "battery_baoe_monitor",
+            "install_device": [
+                {
+                    "child_name": "battery_baoe_monitor",
+                    "device_param": {
+                        "node_id": 123,
+                        "channel": 0
+                    }
+                }
+            ]
+        },
+        {
+            "name": "gyro_rion",
+            "install_device": [
+                {
+                    "child_name": "gyro_rion",
+                    "device_param": {
+                        "node_id": 9,
+                        "channel": 1
+                    }
+                }
+            ]
+        },
+        {
+            "name": "syntron_motor",
+            "install_device": [
+                {
+                    "child_name": "syntron_left_move_motor",
+                    "device_param": {
+                        "node_id": 13,
+                        "channel": 1
+                    }
+                },
+                {
+                    "child_name": "syntron_right_move_motor",
+                    "device_param": {
+                        "node_id": 14,
+                        "channel": 1
+                    }
+                },
+                {
+                    "child_name": "syntron_lift_motor",
+                    "device_param": {
+                        "node_id": 15,
+                        "channel": 1
+                    }
+                },
+                {
+                    "child_name": "syntron_rotate_motor",
+                    "device_param": {
+                        "node_id": 17,
+                        "channel": 1
+                    }
+                }
+            ]
+        }
+    ],
+    "io_config": [
+        {
+            "io_board_info": "io",
+            "io_map": {
+                "di_1": 1,
+                "di_2": 171,
+                "di_3": 172,
+                "di_4": 92,
+                "di_5": 91,
+                "di_6": 94,
+                "di_7": 93,
+                "di_8": 95,
+                "di_9": 96,
+                "di_10": 0,
+                "do_1": 0,
+                "do_2": 0,
+                "do_3": 0,
+                "do_4": 0,
+                "do_5": 0,
+                "do_6": 0,
+                "do_7": 0,
+                "do_8": 0
+            }
+        },
+        {
+            "io_board_info": "io2",
+            "io_map": {
+                "di_1": 0,
+                "di_2": 0,
+                "di_3": 0,
+                "di_4": 0,
+                "di_5": 110,
+                "di_6": 111,
+                "di_7": 112,
+                "di_8": 107,
+                "di_9": 108,
+                "di_10": 109,
+                "do_1": 167,
+                "do_2": 166,
+                "do_3": 165,
+                "do_4": 164,
+                "do_5": 162,
+                "do_6": 161,
+                "do_7": 160,
+                "do_8": 159
+            }
+        },
+        {
+            "io_board_info": "io_single_out",
+            "io_map": {
+                "di_1": 0,
+                "di_2": 0,
+                "di_3": 0,
+                "di_4": 0,
+                "di_5": 0,
+                "di_6": 0,
+                "di_7": 0,
+                "di_8": 0,
+                "di_9": 0,
+                "di_10": 0,
+                "do_1": 0,
+                "do_2": 154,
+                "do_3": 156,
+                "do_4": 155,
+                "do_5": 158,
+                "do_6": 151,
+                "do_7": 153,
+                "do_8": 152
+            }
+        }
+    ]
+}

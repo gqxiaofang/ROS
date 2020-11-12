@@ -1,0 +1,50 @@
+{
+    "common_config": {
+        "controller_frequency": 20,
+        "node_diagnostic_frequency": 20,
+        "enable_local_debug": true
+    },
+    "topic_option_config": {
+        "num_laser_scans": 1,
+        "enable_ks103": false,
+        "enable_io_state": true,
+        "enable_Sick_LMS_lidar": false,
+        "enable_PGV_r2000_lidar": false,
+        "enable_PGV_r2100_avoid_lidar": false
+    },
+    "data_process_option": {
+        "laser_sample_ratio": 0.5,
+        "enable_visualize": true,
+        "ingore_error_laser_point": true
+    },
+    "navi_laser_config": {
+        "navi_laser_scan_sample_step": 4,
+        "navi_laser_samples_per_scan": 1081,
+        "navi_laser_scan_frame_name": "laser",
+        "navi_laser_angle_min": -2.3562,
+        "navi_laser_angle_max": 2.3562,
+        "navi_laser_angle_increment": 0.004,
+        "navi_laser_range_min": 0,
+        "navi_laser_range_max": 30
+    },
+    "pgv_config": {
+        "pgv_scan_sample_step": 1,
+        "pgv_samples_per_scan": 11,
+        "pgv_scan_frame_name": "laser",
+        "pgv_angle_min": -0.6978,
+        "pgv_angle_max": 0.6978,
+        "pgv_angle_increment": 0.1396,
+        "pgv_range_min": 0,
+        "pgv_range_max": 30
+    },
+    "ks103_config": {
+        "ks103_scan_sample_step": 1,
+        "ks103_samples_per_scan": 3,
+        "ks103_scan_frame_name": "ks103",
+        "ks103_angle_min": -1.5708,
+        "ks103_angle_max": 1.5708,
+        "ks103_angle_increment": 1.5708,
+        "ks103_range_min": 0,
+        "ks103_range_max": 2
+    }
+}

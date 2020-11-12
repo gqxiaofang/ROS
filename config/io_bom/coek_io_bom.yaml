@@ -1,0 +1,93 @@
+# 工程人员 与 生产使用
+
+# 可添加设备与设备编号, 不可修改!!!
+# 设备集编号: 所有的IO设备及其编号
+# 标准: 设备集容量[0 ~ 250] 共用[0 ~ 10], 叉车车型[11 - 90], 顶升车型[91 ~ 180]
+################## 共用 ##################
+none_io_device: 0
+# 防撞条 
+bumper: 1
+
+################## 叉车 ##################
+#--------- 叉车输入 11~70 ---------#
+# 托盘叉车上下限位 (诺力托盘/ 中力托盘)
+fork_upper_limit_switch:  11
+fork_downer_limit_switch: 12
+
+# 托盘叉车左右叉腿防撞 (诺力/三向车)
+left_fork_leg_switch: 13
+right_fork_leg_switch: 14
+
+# 托盘叉车货架位置左右检测 (诺力)
+left_position_switch: 15
+right_position_switch: 16
+
+# 叉车避障等级输入 (诺力托盘 / 堆高 / 三向车)
+laser_obstacle_levelI: 17
+laser_obstacle_levelII: 18
+laser_obstacle_levelIII: 19
+
+# 叉车挡板托盘检测开关 (中力 / 三向车)
+pallet_position_switch: 20
+
+# 门架高度开关 2个 (三向车)
+height_switch_1: 21
+height_switch_2: 22
+
+# 侧移到位开关 2个 (三向车)
+lateral_left_switch: 23
+lateral_right_switch: 24
+
+# 旋转到位开关 3个 左到位,右到位,旋转减速 (三向车)
+rotate_left_switch: 25
+rotate_right_switch: 26
+rotate_decel_swtich: 27
+
+# 手自动开关
+manual_swtich: 28
+
+#--------- 叉车输出 71~90 ---------#
+# 柯蒂斯复位继电器 (诺力托盘车)
+curtis_reset: 71
+
+# 避障传感器选择地图4输出通道 (诺力托盘车 / 堆高车 / 三向车)
+laser_obstacle_channelI: 72
+laser_obstacle_channelII: 73
+laser_obstacle_channelIII: 74
+laser_obstacle_channelIV: 75
+laser_obstacle_channelV: 76
+
+# 自动充电继电器
+charge_relay: 80
+
+################## 顶升 ##################
+#--------- 顶升输入 91~150 ---------#
+# 顶升车上下限位
+jack_up_upper_limit_switchI: 91
+jack_up_upper_limit_switchII: 92
+jack_up_downer_limit_switchI: 93
+jack_up_downer_limit_switchII: 94
+
+# 顶升托盘 归零光电开关
+jack_up_pallet_zero_switchI: 95
+jack_up_pallet_zero_switchII: 96
+
+# 无线手柄DI信号量 (都为点动, 按下动, 放开不动)
+remote_control_mode_switch: 100
+remote_control_move_forward: 101
+remote_control_move_backward: 102
+remote_control_move_left: 103
+remote_control_move_right: 104
+remote_control_up: 105
+remote_control_down: 106
+
+#--------- 顶升输出 151~180 ---------#
+jack_up_led_red: 151
+jack_up_led_yellow: 152
+jack_up_led_green: 153
+jack_up_charge: 154
+jack_up_lift_motor_break: 155
+jack_up_rotate_motor_break: 156
+jack_up_24v_lower_power_relay: 157
+jack_up_48v_lower_power_relay: 157
+

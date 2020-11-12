@@ -1,0 +1,19 @@
+{
+  "tf_option": {
+    "enable_shelf_tf": false,
+    "enable_loclizer_tf": true
+  },
+  "low_power_mode_option": {
+    "enable_low_power_mode": false,
+    "waiting_to_enter_time": 600
+  },
+  "finishing_mode_option": {
+    "time_out": 1.8
+  },
+  "fork_lift_logic_option": {
+    "叉车插取托盘": "叉车插取托盘, 未检测到托盘后的继续往后行走一段距离的延长量",
+    "extend_threshold": 0.2,
+    "enable_lose_pallet_check": false,
+    "klost_weighing_threshold": 10
+  }
+}

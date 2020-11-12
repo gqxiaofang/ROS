@@ -1,0 +1,150 @@
+{
+  "action_common_config": {
+    "enable_loacl_debug": true,
+    "enable_timeout": true,
+    "audio_level": 25,
+    "action_timeout_value": 60.0,
+    "control_period": 30.0
+  },
+  "action_charge": {
+    "doc": "充电",
+    "enable_timeout": true,
+    "need_check_charge_do_state": true,
+    "batter_type": 2,
+    "charge_detection": 0,
+    "charge_current_upper": -20000,
+    "charge_current_lower": -1000,
+    "action_timeout_value": 360.0,
+    "charge_voltage_upper": 54000,
+    "charge_voltage_lower": 44000,
+    "charge_test_time": 60,
+    "charge_overout_time": 240
+  },
+  "jackup_action": {
+    "actionnone": {
+      "doc": "无动作",
+      "no.": "0"
+    },
+    "rest": {
+      "doc": "休息",
+      "no.": "1"
+    },
+    "pallet_up_down": {
+      "doc": "托盘顶升/下降",
+      "no.": "2/3",
+      "check_pallet": true,
+      "check_pallet_once": true,
+      "motor_safe_break": true,
+      "speed_optimize_control": true,
+      "action_timeout_value": 60.0,
+      "max_speed": 2600,
+      "safe_speed": 600,
+      "max_height": 0.075,
+      "fixed_speed": 1500,
+      "safe_height": 0.02,
+      "start_delay_time": 0.0,
+      "finish_delay_time": 2.0
+    },
+    "pallet_rotation_zero": {
+      "doc": "托盘旋转/归零",
+      "no.": "4/5",
+      "check_pallet": false,
+      "motor_safe_break": true,
+      "speed_optimize_control": true,
+      "action_timeout_value": 20.0,
+      "max_speed": 600,
+      "safe_speed": 100,
+      "fixed_speed": 50,
+      "start_delay_time": 0.0,
+      "finish_delay_time": 2.0
+    },
+    "lift_motor_break_control": {
+      "doc": "顶升电机抱闸",
+      "no.": "6"
+    },
+    "rotate_motor_break_control": {
+      "doc": "旋转电机抱闸",
+      "no.": "7"
+    },
+    "motor_clear_alarm": {
+      "doc": "电机清除错误",
+      "no.": "9"
+    },
+    "action_waiting": {
+      "doc": "暂停等待",
+      "no.": "10"
+    },
+    "pallet_nomove": {
+      "doc": "托盘对地静止",
+      "no.": "11",
+      "PID": "PID参数设置",
+      "pallet_nomove_kp": 1.0,
+      "pallet_nomove_ki": 0.1,
+      "pallet_nomove_kd": 0.1,
+      "pallet_rotate_reduce_ratio": 64
+    },
+    "magnetic_charge": {
+      "doc": "磁条车充电",
+      "no.": "12",
+      "action_timeout_value": 60.0
+    },
+    "magnetic_switch_dir": {
+      "doc": "磁条车选择方向",
+      "no.": "80"
+    },
+    "low_power_model": {
+      "doc": "低功耗模式-电机断电",
+      "no.": "99"
+    }
+  },
+  "forklift_action": {
+    "waiting": {
+      "doc": "空闲等待",
+      "no.": "0"
+    },
+    "rest": {
+      "doc": "空闲",
+      "no.": "1"
+    },
+    "pallet_fork_up_down": {
+      "doc": "托盘抬升",
+      "no.": "2/3",
+      "check_pallet": true,
+      "enable_timeout": false,
+      "kampere_factor": 10
+    },
+    "heap_fork_move_load_unload": {
+      "doc": "堆高车移动/抬货/卸载",
+      "no.": "4/13/14",
+      "check_pallet": false,
+      "enable_timeout": false,
+      "kheight_up_offset": 450,
+      "kheight_down_offset": 250,
+      "kliftload_height": 600,
+      "kunload_height": 400,
+      "knear_to_land": 300,
+      "kheight_bmmsk34_base_deviation": -250,
+      "kampere_factor": 10,
+      "check_weigh": false,
+      "kload_weighing_threshold": 10
+    },
+    "reach_fork_move_load_unload": {
+      "doc": "前移车托盘横向移动/加载抬升/卸载下降",
+      "no.": "15/16/17",
+      "check_pallet": true,
+      "enable_timeout": false,
+      "klateral_base": 2560,
+      "klateral_to_liftload": 8660,
+      "klateral_offset": 100,
+      "kheight_base_ratio": 0.1,
+      "kheight_up_offset": 150,
+      "kheight_down_offset": 150,
+      "kliftload_height": 600,
+      "kunload_height": 400,
+      "klimit_height": 5000,
+      "knear_to_land": 800,
+      "kheight_bmmsk34_base_deviation": -250,
+      "kampere_factor": 10
+    }
+  }
+}
